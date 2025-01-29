@@ -18,7 +18,7 @@ test.describe('Login Functionality', () => {
     });
 
     await test.step('Verify successful login', async () => {
-     expect(homePage.expectServiceToBeVsible()).toBe(true);
+     await homePage.expectServiceToBeVsible();
     });
   });
 });

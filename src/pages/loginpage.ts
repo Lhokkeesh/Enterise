@@ -22,6 +22,6 @@ export default class LoginPage extends BasePage {
   }
 
   async clickLoginButton() {
-    await this.loginPageLocators.loginButton.click();
+    await this.loginPageLocators.loginButton.click({timeout: 15000});
   }
 }

@@ -9,6 +9,6 @@ export default class HomePage extends BasePage {
 
     // methods
     async expectServiceToBeVsible() {
-        await expect(this.homePageLocators.serviceButton.first()).toBeVisible({ timeout: 10000 });
+        await expect(this.homePageLocators.serviceButton.first()).toBeVisible({ timeout: 15000 });
     }
 }
