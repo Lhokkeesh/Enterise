@@ -14,6 +14,7 @@ The project uses GitHub Actions for continuous integration and deployment. The p
 
 Set up the following secrets in your GitHub repository (Settings > Secrets and variables > Actions):
 
+- `BASE_URL`: Your application URL (e.g., https://your-app.com)
 - `USERNAME`: Your test account username
 - `PASSWORD`: Your test account password
 
