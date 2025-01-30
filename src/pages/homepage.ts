@@ -10,6 +10,11 @@ export default class HomePage extends BasePage {
   };
 
   // methods
+
+  async navigateToHomePage() {
+    await this.page.goto('https://ruby-connect-6698.lightning.force.com/lightning/page/home');
+  }
+
   async expectServiceToBeVsible() {
     await expect(this.homePageLocators.serviceButton.first()).toBeVisible({ timeout: 15000 });
   }

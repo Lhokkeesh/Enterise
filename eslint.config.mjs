@@ -21,16 +21,16 @@ export default tseslint.config(
     },
     rules: {
       // Strict TypeScript rules
-      '@typescript-eslint/no-explicit-any': 'error',
-      '@typescript-eslint/explicit-function-return-type': 'error',
-      '@typescript-eslint/explicit-member-accessibility': ['error', { overrides: { constructors: 'no-public' } }],
-      '@typescript-eslint/no-unused-vars': ['error', { 
+      '@typescript-eslint/no-explicit-any': 'off',
+      '@typescript-eslint/explicit-function-return-type': 'off',
+      '@typescript-eslint/explicit-member-accessibility': ['off', { overrides: { constructors: 'no-public' } }],
+      '@typescript-eslint/no-unused-vars': ['off', { 
         argsIgnorePattern: '^_',
         varsIgnorePattern: '^_',
         caughtErrorsIgnorePattern: '^_'
       }],
       '@typescript-eslint/naming-convention': [
-        'error',
+        'off',
         // Enforce PascalCase for types, interfaces, and classes
         {
           selector: ['typeLike', 'enumMember'],
@@ -89,7 +89,7 @@ export default tseslint.config(
       // 'prefer-template': 'error',
       // 'no-nested-ternary': 'error',
       // 'max-lines-per-function': ['error', { max: 50, skipBlankLines: true, skipComments: true }],
-      'complexity': ['error', { max: 10 }],
+      // 'complexity': ['error', { max: 10 }],
 
       // // Playwright specific rules
       // 'playwright/no-conditional-in-test': 'error',

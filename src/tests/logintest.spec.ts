@@ -1,21 +1,26 @@
 import { test } from '@utilities/base-test';
 
 test.describe('Login Functionality', () => {
-  test('should successfully login with valid credentials', async ({ loginPage }) => {
+  const authFile = 'src/config/auth.json';
+  test('should successfully login with valid credentials', async ({ loginPage, page }) => {
     await test.step('Navigate to login page', async () => {
       await loginPage.navigateToLoginPage();
     });
     await test.step('Fill login credentials', async () => {
-      if (process.env.USERNAME && process.env.PASSWORD) {
-        await loginPage.fillUserName(process.env.USERNAME);
-        await loginPage.fillPassword(process.env.PASSWORD);
-      } else {
+      const username = process.env.TEST_USERNAME;
+      const password = process.env.TEST_PASSWORD;
+
+      if (!username || !password) {
         throw new Error('Username or Password is not defined in environment variables');
       }
+
+      await loginPage.fillUserName(username);
+      await loginPage.fillPassword(password);
     });
 
-    await test.step('Submit login form', async () => {
+    await test.step('Submit login form and save auth state', async () => {
       await loginPage.clickLoginButton();
+      await page.context().storageState({ path: authFile });
     });
   });
 });
