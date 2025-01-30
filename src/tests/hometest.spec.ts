@@ -5,7 +5,7 @@ import { test } from '@utilities/base-test';
 test.use({ storageState: 'src/config/auth.json' });
 
 test.describe('Homepage', () => {
-  test('should display the homepage', async ({ page, homePage }) => {
+  test('should display the homepage', async ({ homePage }) => {
     await test.step('Navigate and verify homepage', async () => {
       await homePage.navigateToHomePage();
       await homePage.expectServiceToBeVsible();
