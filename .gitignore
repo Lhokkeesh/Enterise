@@ -13,6 +13,7 @@ dist/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
+src/config/auth.json
 
 # Environment variables
 .env
