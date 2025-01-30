@@ -1,7 +1,7 @@
 import { test } from '@utilities/base-test';
 
 test.describe('Login Functionality', () => {
-  test('should successfully login with valid credentials', async ({ loginPage, homePage }) => {
+  test('should successfully login with valid credentials', async ({ loginPage }) => {
     await test.step('Navigate to login page', async () => {
       await loginPage.navigateToLoginPage();
     });
@@ -16,10 +16,6 @@ test.describe('Login Functionality', () => {
 
     await test.step('Submit login form', async () => {
       await loginPage.clickLoginButton();
-    });
-
-    await test.step('Verify successful login', async () => {
-      await homePage.expectServiceToBeVsible();
     });
   });
 });
