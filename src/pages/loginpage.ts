@@ -1,4 +1,6 @@
-import BasePage from './basePage';
+/* eslint-disable @typescript-eslint/explicit-function-return-type */
+/* eslint-disable @typescript-eslint/explicit-member-accessibility */
+import BasePage from '@pages/basePage';
 
 export default class LoginPage extends BasePage {
   // locators
@@ -22,6 +24,6 @@ export default class LoginPage extends BasePage {
   }
 
   async clickLoginButton() {
-    await this.loginPageLocators.loginButton.click({timeout: 15000});
+    await this.loginPageLocators.loginButton.click({ timeout: 15000 });
   }
 }
